@@ -3,19 +3,19 @@
             <form class="p-5 bg-white animated jello">
                 <div class="form-group">
                     <label class="font-weight-bold" for="fullname">Fullname:</label>
-                    <input type="text" id="fullname" class="form-control" [formControl]="usrName"/>
+                    <input type="text" id="fullname" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <div>
                         <label class="font-weight-bold" for="fullname">You are:</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input checked type="radio" id="jobseeker" [formControl]="jobRadio" name="jobRadio"
+                        <input checked type="radio" id="jobseeker"  name="jobRadio"
                             class="custom-control-input" value="0">
                         <label class="custom-control-label" for="jobseeker">Job Seeker</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline2" [formControl]="jobRadio" name="jobRadio"
+                        <input type="radio" id="customRadioInline2" name="jobRadio"
                             class="custom-control-input" value="1">
                         <label class="custom-control-label" for="customRadioInline2">
                             Employer Seeking Candidates
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-primary py-2 px-5" (click)="onSubmit()">OK</button>
+                    <button type="button" class="btn btn-primary py-2 px-5">OK</button>
                 </div>
             </form>
         </div>
