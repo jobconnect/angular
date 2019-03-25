@@ -1,30 +1,31 @@
     <div class="landing-page">
         <div id="form-submit">
-            <form class="p-5 bg-white animated jello">
+            <form (ngSubmit)="onSubmit()" class="p-5 bg-white animated jello">
                 <div class="form-group">
                     <label class="font-weight-bold" for="fullname">Full name:</label>
-                    <input type="text" id="fullname" class="form-control"/>
+                    <input type="text" id="fullname" class="form-control" [formControl]="name"/>
                 </div>
                 <div class="form-group">
                     <div>
                         <label class="font-weight-bold" for="fullname">You are:</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input checked type="radio" id="jobseeker"  name="jobRadio"
-                            class="custom-control-input" value="0">
+                        <input type="radio" id="jobseeker"  name="jobRadio"
+                            class="custom-control-input" value="0" [formControl]="jobRadio">
                         <label class="custom-control-label" for="jobseeker">Job Seeker</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
                         <input type="radio" id="customRadioInline2" name="jobRadio"
-                            class="custom-control-input" value="1">
+                            class="custom-control-input" value="1" [formControl]="jobRadio">
                         <label class="custom-control-label" for="customRadioInline2">
                             Employer Seeking Candidates
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-primary py-2 px-5">OK</button>
+                    <button type="submit" class="btn btn-primary py-2 px-5">OK</button>
                 </div>
             </form>
         </div>
     </div>
+    <router-outlet></router-outlet>

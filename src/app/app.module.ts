@@ -8,6 +8,8 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HellopageComponent } from './hellopage/hellopage.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { HellopageComponent } from './hellopage/hellopage.component';
     HomeComponent,
     EmployeeDetailsComponent,
     MessageComponent,
-    HellopageComponent
+    HellopageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

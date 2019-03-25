@@ -1,13 +1,1 @@
-<p>
-</p>
-<div>
-  <ul>
-    <li *ngFor="let emp of list" (click)="onSelect(emp)">
-      <span>Emp: ID</span> {{emp.id}}
-    </li>
-  </ul>
-</div>
-
-<div *ngIf="selectedEmp">
-  <app-employee-details [selectedEmp]="selectedEmp"></app-employee-details>
-</div>
+<app-navbar></app-navbar>
