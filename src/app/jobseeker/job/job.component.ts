@@ -15,7 +15,6 @@ export class JobComponent implements OnInit {
   constructor(private jobService: JobService, route: ActivatedRoute) {
     route.data.subscribe((data)=>{
       this.job = data.job[0];
-      console.log(this.job);
     })
   }
 

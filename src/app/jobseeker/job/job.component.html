@@ -8,12 +8,12 @@
                     data-scrollax=" properties: { translateY: '70%' }">
                     <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
                         <span class="mr-3">
-                            <a href="index.html">
+                            <a href="" routerLink="/jobseeker/home">
                                 Home <i class="ion-ios-arrow-forward"></i>
                             </a>
                         </span>
                         <span class="mr-3">
-                            <a href="index.html">
+                            <a href="" routerLink="/jobseeker/home">
                                 Jobs <i class="ion-ios-arrow-forward"></i>
                             </a>
                         </span>
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="ml-auto d-flex">
-                        <a href="job-single.html" class="btn btn-primary py-2 mr-1">Apply Job</a>
+                        <a href="#" class="btn btn-primary py-2 mr-1">Apply Job</a>
                         <a href="#"
                             class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
                             <span class="icon-heart"></span>
@@ -81,81 +81,57 @@
                                         <span class="mr-1">
                                             <i class="icon-heart"></i>
                                         </span>
-                                        13 month salary; Parking allowance
+                                        {{job.job_information.benefits.benefit_one}}
                                     </div>
                                     <div class="benefit">
                                         <span class="mr-1">
                                             <i class="ion-md-medal"></i>
                                         </span>
-                                        Annual Performance Review, KPI Bonus
-                                    </div>
+                                        {{job.job_information.benefits.benefit_two}}                                    </div>
                                     <div class="benefit">
                                         <span class="mr-1">
                                             <i class="ion-md-flash"></i>
                                         </span>
-                                        Get discounts monthly (up to 50%/ bill)
-                                    </div>
+                                        {{job.job_information.benefits.benefit_three}}                                    </div>
                                 </div>
                             </div>
                             <div class="card-jobs bg-white">
                                 <h2>JOB DESCRIPTION</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, repellendus
-                                    ipsum dicta modi veniam eum. Corrupti est magni illum incidunt possimus. Cumque
-                                    reiciendis minus eos necessitatibus! Doloribus porro accusantium veniam.
+                                    {{job.job_information.description}}
                                 </p>
                             </div>
                             <div class="card-jobs bg-white">
                                 <h2>JOB REQUIREMENTS</h2>
-                                <ul>
-                                    <li>Graduate</li>
-                                    <li>At least 1-2 years in same position.d at Law University, Major: Law</li>
-                                    <li>Excellent knowledge of government regulations</li>
-                                    <li>Excellent written and oral communication skills in Vietnamese and English.</li>
-                                    <li>Organized and able to cope with regularly changing priorities while still
-                                        delivering a high standard of service</li>
-                                    <li>Maintains professional working knowledge and keeps abreast of legislative and
-                                        regulatory developments and requirements necessary to perform the role</li>
-                                    <li>Flexible and ‘hands-on’ approach</li>
-                                    <li>Line management skills</li>
+                                <ul *ngFor="let require of job.job_information.requirement">
+                                    <li>{{require}}</li>
                                 </ul>
                             </div>
                             <div class="card-jobs bg-white job-tags">
                                 <h4>Tags</h4>
-                                <span>Android</span>
-                                <span>Html</span>
-                                <span>css</span>
-                                <span>Android</span>
-                                <span>Html</span>
-                                <span>css</span>
-                                <span>Android</span>
-                                <span>Html</span>
-                                <span>css</span>
-                                <span>Android</span>
-                                <span>Html</span>
-                                <span>css</span>
+                                <span *ngFor="let tag of job.tags">{{tag}}</span>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-12 tab-main-content">
                             <div class="card-jobs border" style="background-color: #f7fdff">
                                 <div>
                                     <h5>Date post</h5>
-                                    <p>25/05/2019</p>
+                                    <p>{{job.date}}</p>
                                 </div>
                                 <hr />
                                 <div>
                                     <h5>Rank</h5>
-                                    <p>Employees</p>
+                                    <p>{{job.rank}}</p>
                                 </div>
                                 <hr />
                                 <div>
                                     <h5>Career</h5>
-                                    <p>Programmer</p>
+                                    <p>{{job.carrer}}</p>
                                 </div>
                                 <hr />
                                 <div>
                                     <h5>Skills</h5>
-                                    <p>SQL, Nodejs, Mysql, Golang, Blockchain</p>
+                                    <p *ngFor="let skill of job.job_information.skills">{{skill}}</p>
                                 </div>
                             </div>
                         </div>
@@ -167,34 +143,13 @@
                         <div class="col-md-8 col-sm-12 tab-main-content">
                             <div class="card-jobs bg-white">
                                 <div class="carousel-business owl-carousel">
-                                    <div class="item">
-                                        <img src="https://wi-images.condecdn.net/image/VBqKlbJYNXl/crop/1620/f/11-15-FTfacebook__06.jpg"
-                                            width="150px" height="150px" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://i.ytimg.com/vi/ANPHddOfz04/maxresdefault.jpg" width="150px"
-                                            height="150px" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://images.pexels.com/photos/1181304/pexels-photo-1181304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                            width="150px" height="150px" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                            width="150px" height="150px" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://images.pexels.com/photos/1181435/pexels-photo-1181435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                    <div *ngFor="let url of job.gallery" class="item">
+                                        <img src="{{url}}"
                                             width="150px" height="150px" />
                                     </div>
                                 </div>
                                 <div class="mt-3">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque doloremque
-                                    voluptas modi beatae ipsum ipsam vero dolore dicta nulla veniam cupiditate a
-                                    nesciunt cum consequatur, possimus eligendi facilis porro.
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque atque doloremque
-                                    voluptas modi beatae ipsum ipsam vero dolore dicta nulla veniam cupiditate a
-                                    nesciunt cum consequatur, possimus eligendi facilis porro.
+                                    {{job.description}}
                                 </div>
                             </div>
                         </div>
@@ -202,12 +157,12 @@
                             <div class="card-jobs border" style="background-color: #f7fdff">
                                 <div>
                                     <h5>Address</h5>
-                                    <p>R202, HITC Building, 239 Xuan Thuy Street, Cau Giay District, Hanoi</p>
+                                    <p>{{job.summary.address}}</p>
                                 </div>
                                 <hr />
                                 <div>
                                     <h5>Company Size</h5>
-                                    <p>100-499 members</p>
+                                    <p>{{job.summary.company_size}}</p>
                                 </div>
                             </div>
                         </div>

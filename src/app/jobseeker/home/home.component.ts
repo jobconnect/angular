@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JobService } from '../service/job.service';
 import { Job } from '../class/job';
-import { Route } from '@angular/compiler/src/core';
 import { ActivatedRoute } from '@angular/router';
+import { Category } from '../class/category';
 
 @Component({
   selector: 'app-home',
@@ -11,16 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   jobs: Job[];
-  constructor(private jobService: JobService, route: ActivatedRoute) { 
+  category: Category[];
+  constructor(route: ActivatedRoute) { 
     route.data.subscribe((data)=>{
       this.jobs = data.jobs;
+      this.category = data.cate;
     })
   }
   
   ngOnInit() {
-  }
-
-  public getJobs() {
   }
 
 }
