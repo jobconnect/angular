@@ -8,12 +8,14 @@ import { FooterComponent } from './footer/footer.component';
 import { FindjobComponent } from './findjob/findjob.component';
 import { HomeResolveService } from './resolve/home-resolve.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { JobComponent } from './job/job.component';
 //Định nghĩa router riêng cho module này
 const routing: Routes = [
   { path: '', component: JobseekerComponent, children: [{
     path: '', redirectTo: 'home'},
     {path: 'home', component: HomeComponent, resolve: { 'jobs': HomeResolveService }},
-  {path: 'find', component: FindjobComponent}
+    {path: 'find', component: FindjobComponent},
+    {path: 'job', component: JobComponent}
 ], }
 ];
 
@@ -22,7 +24,7 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent ],
+  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent ],
   imports: [
     CommonModule,
     Routing,
