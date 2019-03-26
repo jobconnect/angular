@@ -6,13 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FindjobComponent } from './findjob/findjob.component';
+import { HomeResolveService } from './resolve/home-resolve.service';
 //Định nghĩa router riêng cho module này
 const routing: Routes = [
   { path: '', component: JobseekerComponent, children: [{
     path: '', redirectTo: 'home'},
-    {path: 'home', component: HomeComponent},
+    {path: 'home', component: HomeComponent, resolve: { 'jobs': HomeResolveService }},
   {path: 'find', component: FindjobComponent}
-] }
+], }
 ];
 
 //forChild -> Vì router này sẽ được load như một router con

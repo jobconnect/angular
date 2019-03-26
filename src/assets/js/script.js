@@ -108,7 +108,7 @@
 
 
 	$('#dropdown04').on('show.bs.dropdown', function () {
-	  console.log('show');
+	  //console.log('show');
 	});
 
 	// scroll
@@ -182,7 +182,7 @@
 				$('.number').each(function(){
 					var $this = $(this),
 						num = $this.data('number');
-						console.log(num);
+						//console.log(num);
 					$this.animateNumber(
 					  {
 					    number: num,
@@ -255,7 +255,7 @@
 		  }
 		});
 		$('body').on('activate.bs.scrollspy', function () {
-		  console.log('nice');
+		  //console.log('nice');
 		})
 	};
 	OnePageNav();

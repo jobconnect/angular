@@ -20,14 +20,7 @@ export class JobService {
   }
   _url = "api/jobs";
   getJob(): Observable<Job[]>{
-    return of([{
-      "id": 1,
-      "name": "Front End Developers",
-      "company": "Facebook Inc.",
-      "companyUrl": "https://facebook.com",
-      "category": "Fulltime",
-      "location": "California"
-  }]);
+    return this.http.get<Job[]>(this._url);
   }
 
 /**
