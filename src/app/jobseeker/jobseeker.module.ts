@@ -9,13 +9,14 @@ import { FindjobComponent } from './findjob/findjob.component';
 import { HomeResolveService } from './resolve/home-resolve.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { JobComponent } from './job/job.component';
+import { JobResolveService } from './resolve/job-resolve.service';
 //Định nghĩa router riêng cho module này
 const routing: Routes = [
   { path: '', component: JobseekerComponent, children: [{
     path: '', redirectTo: 'home'},
     {path: 'home', component: HomeComponent, resolve: { 'jobs': HomeResolveService }},
     {path: 'find', component: FindjobComponent},
-    {path: 'job', component: JobComponent}
+    {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService}}
 ], }
 ];
 
