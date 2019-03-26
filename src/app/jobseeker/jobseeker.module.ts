@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FindjobComponent } from './findjob/findjob.component';
 import { HomeResolveService } from './resolve/home-resolve.service';
+import {NgxPaginationModule} from 'ngx-pagination';
 //Định nghĩa router riêng cho module này
 const routing: Routes = [
   { path: '', component: JobseekerComponent, children: [{
@@ -24,7 +25,8 @@ const Routing: ModuleWithProviders = RouterModule.forChild(routing);
   declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent ],
   imports: [
     CommonModule,
-    Routing
+    Routing,
+    NgxPaginationModule
   ]
 })
 export class JobseekerModule { }
