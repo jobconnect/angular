@@ -4,11 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { JobseekerComponent } from './jobseeker/jobseeker.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { FindjobComponent } from './findjob/findjob.component';
 //Định nghĩa router riêng cho module này
 const routing: Routes = [
   { path: '', component: JobseekerComponent, children: [{
-    path: '', component: HomeComponent
-  }] }
+    path: '', redirectTo: 'home'},
+    {path: 'home', component: HomeComponent},
+  {path: 'find', component: FindjobComponent}
+] }
 ];
 
 //forChild -> Vì router này sẽ được load như một router con
@@ -16,7 +20,7 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, ],
+  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent ],
   imports: [
     CommonModule,
     Routing
