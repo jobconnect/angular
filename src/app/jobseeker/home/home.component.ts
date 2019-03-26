@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
     this.getJobs();
   }
 
-  getJobs():void{
-    this.jobService.getJob().subscribe(jobs=>this.jobs = jobs);
+  getJobs() {
+    this.jobService.getJob().subscribe(jobs => this.jobs = jobs);
   }
 
 }
