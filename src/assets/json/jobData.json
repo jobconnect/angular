@@ -4,5 +4,19 @@
     "company": "Facebook Inc.",
     "companyUrl": "https://facebook.com",
     "category": "Fulltime",
-    "location": "California"
+    "location": "California",
+    "details": [{
+        "benifit": "",
+        "description": "",
+        "requirement": ["Sieng Nang", "asdasd", "Asdasda"],
+        "tag": ["android", "html"]
+    }],
+    "daypost": "",
+    "rank": "",
+    "carrer": "",
+    "skills": {},
+    "bussiness": [{
+        "address": "",
+        "img": ["abc", "def"]
+    }]
 }
