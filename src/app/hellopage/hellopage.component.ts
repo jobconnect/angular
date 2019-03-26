@@ -18,7 +18,7 @@ export class HellopageComponent implements OnInit {
     if(this.name.value!=""){
       localStorage.setItem('usr', JSON.stringify({name: this.name.value, 
       jobRadio: Number(this.jobRadio.value)}));
-      if(this.jobRadio.value === 0){
+      if(this.jobRadio.value == 0){
         this.route.navigate(['/jobseeker']);
       }
     }
