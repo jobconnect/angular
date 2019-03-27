@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HellopageComponent } from './hellopage/hellopage.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +13,6 @@ import { InMemoryDataService }  from './in-memory-data.service';
 @NgModule({
   declarations: [
     AppComponent,
-    MessageComponent,
     HellopageComponent
   ],
   imports: [
