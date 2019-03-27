@@ -5,11 +5,13 @@ import { JobseekerComponent } from './jobseeker/jobseeker.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { FindjobComponent } from './findjob/findjob.component';
 import { HomeResolveService } from './resolve/home-resolve.service';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { CategoryResolveService } from './resolve/category-resolve.service';
 import { JobComponent } from './job/job.component';
 import { JobResolveService } from './resolve/job-resolve.service';
+import { CategoryResolveService } from './resolve/category-resolve.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SampleInterviewComponent } from './sample-interview/sample-interview.component';
 import { InterviewEtiquetteComponent } from './interview-etiquette/interview-etiquette.component';
 import { InterviewEtiquetteService } from './resolve/interview-etiquette.service';
@@ -18,7 +20,7 @@ const routing: Routes = [
   { path: '', component: JobseekerComponent, children: [{
     path: '', pathMatch: 'full', redirectTo: 'home'},
     {path: 'home', component: HomeComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService }},
-    {path: 'find', loadChildren: './findjob/findjob.module#FindjobModule'},
+    {path: 'find', component: FindjobComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService }},
     {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService, 'other': HomeResolveService}},
     {path: 'sample-interview', component: SampleInterviewComponent},
     {path: 'interview-etiquette', component: InterviewEtiquetteComponent, resolve: {'video': InterviewEtiquetteService}}
@@ -30,11 +32,13 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, SampleInterviewComponent, InterviewEtiquetteComponent ,JobComponent, FooterComponent],
+  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, SampleInterviewComponent, InterviewEtiquetteComponent ],
   imports: [
     CommonModule,
     Routing,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class JobseekerModule { }
