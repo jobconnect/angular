@@ -12,7 +12,7 @@ export class InMemoryDataService implements InMemoryDbService{
     let jobs:Job[] =  [
         {
             "id": 1,
-            "name": "BackEnd Developer (Node.js / C#.net / Jav``aScript)",
+            "name": "BackEnd Developer (Node.js / C#.net / JavaScript)",
             "type": "Partime",
             "company": "Vingroup",
             "description": "We are Vingroup company based in Viet Nam and we are expanding our VinFast center in Ho Chi Minh. We are looking for first batch candidates of that will establish our first team in Sai Gon. We need you to work as contractors with us in Company for 6 months for training, before you go back to be our team lead in Saigon, supervising our operation there.",

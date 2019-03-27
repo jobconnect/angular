@@ -5,7 +5,7 @@ import { HellopageComponent } from '../app/hellopage/hellopage.component';
 const routes: Routes = [
   { path: '', component: HellopageComponent},
   { path: 'jobseeker', loadChildren: './jobseeker/jobseeker.module#JobseekerModule'},
-  { path: 'employeeseeker', component: HellopageComponent}
+  { path: 'employer', loadChildren: './employer/employer.module#EmployerModule'}
 ];
 
 @NgModule({
@@ -20,11 +20,11 @@ export class AppRoutingModule {
       if(jobRadio===0){
         this.route.navigate(['/jobseeker']);
       }
+
       if(jobRadio===1){
-        this.route.navigate(['/employeeseeker'])
+        console.log(this.route.url);
+        this.route.navigate(['/employer'])
       }
-    }else {
-      this.route.navigate(['/']);
     }
   }
 }

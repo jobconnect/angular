@@ -21,6 +21,9 @@ export class HellopageComponent implements OnInit {
       if(this.jobRadio.value == 0){
         this.route.navigate(['/jobseeker']);
       }
+      if(this.jobRadio.value == 1){
+        this.route.navigate(['/employer']);
+      }
     }
   }
 

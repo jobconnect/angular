@@ -16,6 +16,9 @@ import { SearchComponent } from './findjob/search/search.component';
 import { SampleInterviewComponent } from './sample-interview/sample-interview.component';
 import { InterviewEtiquetteComponent } from './interview-etiquette/interview-etiquette.component';
 import { InterviewEtiquetteService } from './resolve/interview-etiquette.service';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
 
 //Định nghĩa router riêng cho module này
 const routing: Routes = [
@@ -25,7 +28,9 @@ const routing: Routes = [
     {path: 'find', component: FindjobComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService }},
     {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService, 'other': HomeResolveService}},
     {path: 'sample-interview', component: SampleInterviewComponent},
-    {path: 'interview-etiquette', component: InterviewEtiquetteComponent, resolve: {'video': InterviewEtiquetteService}}
+    {path: 'interview-etiquette', component: InterviewEtiquetteComponent, resolve: {'video': InterviewEtiquetteService}},
+    {path: 'about', component: AboutComponent},
+    {path: 'contact', component: ContactComponent}
 ], }
 ];
 
@@ -34,7 +39,7 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, SearchComponent, SampleInterviewComponent, InterviewEtiquetteComponent ],
+  declarations: [JobseekerComponent, AboutComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, SearchComponent, SampleInterviewComponent, InterviewEtiquetteComponent, ContactComponent ],
   imports: [
     CommonModule,
     Routing,
