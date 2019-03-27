@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Job } from '../class/job';
+import { Router } from '@reach/router';
+import { JobService } from '../service/job.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +13,7 @@ export class JobComponent implements OnInit {
   job: Job;
   other: Job[];
 
-  constructor(route: ActivatedRoute) {
+  constructor(private jobService: JobService, route: ActivatedRoute) {
     route.data.subscribe((data)=>{
       this.job = data.job[0];
       this.other = data.other;
