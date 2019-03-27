@@ -29,6 +29,7 @@ export class FooterComponent implements OnInit {
     this.loadScript("/assets/js/aos.js");
     this.loadScript("/assets/js/jquery.animateNumber.min.js");
     this.loadScript("/assets/js/bootstrap-datepicker.js");
+    this.loadScript("/assets/js/jquery.timepicker.min.js");
     this.loadScript('/assets/js/script.js');
     this.loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false");
     this.loadScript("/assets/js/google-map.js");

@@ -8,19 +8,25 @@ import { FooterComponent } from './footer/footer.component';
 import { FindjobComponent } from './findjob/findjob.component';
 import { HomeResolveService } from './resolve/home-resolve.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { JobComponent } from './job/job.component';
 import { JobResolveService } from './resolve/job-resolve.service';
+import { FilterUnique } from './class/filter-unique';
 import { CategoryResolveService } from './resolve/category-resolve.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './findjob/search/search.component';
 import { SampleInterviewComponent } from './sample-interview/sample-interview.component';
+import { InterviewEtiquetteComponent } from './interview-etiquette/interview-etiquette.component';
+import { InterviewEtiquetteService } from './resolve/interview-etiquette.service';
 //Định nghĩa router riêng cho module này
 const routing: Routes = [
   { path: '', component: JobseekerComponent, children: [{
     path: '', pathMatch: 'full', redirectTo: 'home'},
     {path: 'home', component: HomeComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService }},
     {path: 'find', component: FindjobComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService }},
-    {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService}},
-    {path: 'sample-interview', component: SampleInterviewComponent}
+    {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService, 'other': HomeResolveService}},
+    {path: 'sample-interview', component: SampleInterviewComponent},
+    {path: 'interview-etiquette', component: InterviewEtiquetteComponent, resolve: {'video': InterviewEtiquetteService}}
 ], }
 ];
 
@@ -29,16 +35,11 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-<<<<<<< HEAD
-  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, SampleInterviewComponent, InterviewEtiquetteComponent ],
-=======
-  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, FilterUnique, SearchComponent, SampleInterviewComponent ],
->>>>>>> parent of 9d0c67a... working video
+  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, FilterUnique, SearchComponent, SampleInterviewComponent, InterviewEtiquetteComponent ],
   imports: [
     CommonModule,
     Routing,
     NgxPaginationModule,
-    Ng2SearchPipeModule,
     FormsModule,
     ReactiveFormsModule
   ]

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Job } from '../class/job';
 import { Category } from '../class/category';
 import { FormControl } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
 
 @Component({
   selector: 'app-findjob',
@@ -25,7 +26,6 @@ export class FindjobComponent implements OnInit {
   }
 
   onSubmit(){
-    //Simple search in real work need edit here
     this.findJob = this.jobs.filter(job => job.name.includes(this.name.value) && String(job.summary['address']).includes(this.location.value));
   }
 
