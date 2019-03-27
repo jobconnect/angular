@@ -5,6 +5,7 @@ import { FindjobComponent } from './findjob.component';
 import { HomeResolveService } from '../resolve/home-resolve.service';
 import { CategoryResolveService } from '../resolve/category-resolve.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 const routing: Routes = [
   { path: '', component: FindjobComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService } }
 ];
@@ -14,7 +15,8 @@ const Routing: ModuleWithProviders = RouterModule.forChild(routing);
   declarations: [FindjobComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class FindjobModule { }
