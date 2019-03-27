@@ -19,6 +19,9 @@ import { InterviewEtiquetteComponent } from './interview-etiquette/interview-eti
 import { InterviewEtiquetteService } from './resolve/interview-etiquette.service';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { VoidInterviewComponent } from './void-interview/void-interview.component';
+import { DetailsComponent } from './void-interview/details/details.component';
+import { InterviewVoidService } from './resolve/interview-void.service';
 
 
 //Định nghĩa router riêng cho module này
@@ -30,8 +33,10 @@ const routing: Routes = [
     {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService, 'other': HomeResolveService}},
     {path: 'sample-interview', component: SampleInterviewComponent},
     {path: 'interview-etiquette', component: InterviewEtiquetteComponent, resolve: {'video': InterviewEtiquetteService}},
+    {path: 'void-interview', component: VoidInterviewComponent, resolve: {'post': InterviewVoidService}},
+    {path: 'void-interview/:id', component: DetailsComponent, resolve: {'post': InterviewVoidService}},
     {path: 'about', component: AboutComponent},
-    {path: 'contact', component: ContactComponent}
+    {path: 'contact', component: ContactComponent},
 ], }
 ];
 
@@ -40,7 +45,7 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-  declarations: [JobseekerComponent, AboutComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, SearchComponent, SampleInterviewComponent, InterviewEtiquetteComponent, ContactComponent ],
+  declarations: [JobseekerComponent, AboutComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, SearchComponent, SampleInterviewComponent, InterviewEtiquetteComponent, ContactComponent, VoidInterviewComponent, DetailsComponent ],
   imports: [
     CommonModule,
     Routing,
