@@ -15,13 +15,15 @@ import { FilterUnique } from './class/filter-unique';
 import { CategoryResolveService } from './resolve/category-resolve.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './findjob/search/search.component';
+import { SampleInterviewComponent } from './sample-interview/sample-interview.component';
 //Định nghĩa router riêng cho module này
 const routing: Routes = [
   { path: '', component: JobseekerComponent, children: [{
     path: '', pathMatch: 'full', redirectTo: 'home'},
     {path: 'home', component: HomeComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService }},
     {path: 'find', component: FindjobComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService }},
-    {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService}}
+    {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService}},
+    {path: 'sample-interview', component: SampleInterviewComponent}
 ], }
 ];
 
@@ -30,7 +32,7 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, FilterUnique, SearchComponent ],
+  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, FilterUnique, SearchComponent, SampleInterviewComponent ],
   imports: [
     CommonModule,
     Routing,

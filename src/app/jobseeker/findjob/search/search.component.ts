@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Category } from '../../class/category';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { Job } from '../../class/job';
 
 @Component({
@@ -10,11 +8,15 @@ import { Job } from '../../class/job';
 })
 export class SearchComponent implements OnInit {
 
-  @Input() n:string;
-  constructor() {
+  @Input() jobs:Job[];
+  constructor(private ref: ChangeDetectorRef) {
+    setTimeout(() => {
+      console.log(this.jobs);
+      this.ref.markForCheck();
+    },2000)
   }
 
   ngOnInit() {
   }
-
+  
 }
