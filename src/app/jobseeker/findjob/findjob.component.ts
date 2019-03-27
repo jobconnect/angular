@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Job } from '../class/job';
 import { Category } from '../class/category';
 import { FormControl } from '@angular/forms';
-import { SearchComponent } from './search/search.component';
 
 @Component({
   selector: 'app-findjob',
@@ -11,7 +10,6 @@ import { SearchComponent } from './search/search.component';
   styleUrls: ['./findjob.component.css']
 })
 export class FindjobComponent implements OnInit {
-  filterArgs = {name: 'Frontend'};
   jobs: Job[];
   category: Category[];
   name= new FormControl('');

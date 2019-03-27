@@ -4,6 +4,7 @@ import { Job } from './jobseeker/class/job';
 import { Category } from './jobseeker/class/category';
 import { Video } from './jobseeker/class/video';
 import { VoidInterview } from './jobseeker/class/void-interview';
+import { Employee } from './jobseeker/class/employee';
 
 @Injectable({
   providedIn: 'root'
@@ -307,7 +308,14 @@ export class InMemoryDataService implements InMemoryDbService{
             "date": "25/03/2019"
         }
     ]
-    return {jobs, cate, video, interview};
+    let employee: Employee[] = [{
+        name: "Lily",
+        job: "Web Developer",
+        url: "assets/images/person_1.png",
+        age: 15
+
+    }]
+    return {jobs, cate, video, interview, employee};
   }
     // Overrides the genId method to ensure that a hero always has an id.
   // If the heroes array is empty,

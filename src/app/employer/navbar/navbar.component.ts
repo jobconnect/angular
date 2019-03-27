@@ -7,15 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(public route: Router) { }
   isCollapsed = true;
   
   obj = JSON.parse(localStorage.getItem('usr'));
 
+  constructor(public route: Router) { }
+
   ngOnInit() {
   }
-
   exit(){
     localStorage.removeItem('usr');
     this.route.navigate(['/']);

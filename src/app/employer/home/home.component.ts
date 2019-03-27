@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from 'src/app/jobseeker/class/employee';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  employees: Employee[];
+  constructor(route: ActivatedRoute) { 
+    route.data.subscribe((data)=>{
+      this.employees = data.emp;
+      console.log(this.employees)
+    })
+  }
 
   ngOnInit() {
-    console.log("Home init")
   }
 
 }

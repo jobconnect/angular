@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { JobseekerComponent } from './jobseeker/jobseeker.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
 import { FindjobComponent } from './findjob/findjob.component';
 import { HomeResolveService } from './resolve/home-resolve.service';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -13,7 +12,6 @@ import { JobComponent } from './job/job.component';
 import { JobResolveService } from './resolve/job-resolve.service';
 import { CategoryResolveService } from './resolve/category-resolve.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchComponent } from './findjob/search/search.component';
 import { SampleInterviewComponent } from './sample-interview/sample-interview.component';
 import { InterviewEtiquetteComponent } from './interview-etiquette/interview-etiquette.component';
 import { InterviewEtiquetteService } from './resolve/interview-etiquette.service';
@@ -22,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import { VoidInterviewComponent } from './void-interview/void-interview.component';
 import { DetailsComponent } from './void-interview/details/details.component';
 import { InterviewVoidService } from './resolve/interview-void.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 //Định nghĩa router riêng cho module này
@@ -45,7 +44,7 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-  declarations: [JobseekerComponent, AboutComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, SearchComponent, SampleInterviewComponent, InterviewEtiquetteComponent, ContactComponent, VoidInterviewComponent, DetailsComponent ],
+  declarations: [JobseekerComponent, AboutComponent, NavbarComponent ,FooterComponent, HomeComponent, FindjobComponent, JobComponent, SampleInterviewComponent, InterviewEtiquetteComponent, ContactComponent, VoidInterviewComponent, DetailsComponent ],
   imports: [
     CommonModule,
     Routing,

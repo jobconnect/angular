@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { NgLocalization } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,6 +23,8 @@ export class HellopageComponent implements OnInit {
       if(this.jobRadio.value == 1){
         this.route.navigate(['/employer']);
       }
+    } else {
+      this.route.navigate(['/']);
     }
   }
 
