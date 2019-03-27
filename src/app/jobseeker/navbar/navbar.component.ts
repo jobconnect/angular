@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   constructor() { }
-
+  isCollapsed = true;
+  
   obj = JSON.parse(localStorage.getItem('usr'));
 
   ngOnInit() {

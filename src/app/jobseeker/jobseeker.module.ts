@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FindjobComponent } from './findjob/findjob.component';
 import { HomeResolveService } from './resolve/home-resolve.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { JobComponent } from './job/job.component';
 import { JobResolveService } from './resolve/job-resolve.service';
 import { CategoryResolveService } from './resolve/category-resolve.service';
@@ -45,7 +46,8 @@ const Routing: ModuleWithProviders = RouterModule.forChild(routing);
     Routing,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CollapseModule.forRoot()
   ]
 })
 export class JobseekerModule { }

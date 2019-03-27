@@ -319,7 +319,4 @@ AOS.init({
 	 'autoclose': true
  });
 
-
-
-
 })(jQuery);
