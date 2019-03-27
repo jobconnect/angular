@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { Job } from '../../class/job';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {

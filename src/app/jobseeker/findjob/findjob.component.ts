@@ -17,7 +17,6 @@ export class FindjobComponent implements OnInit {
   name= new FormControl('');
   select = new FormControl('');
   location = new FormControl('');
-  loadComponent = false;
   findJob: Job[];
   constructor(route: ActivatedRoute) { 
     route.data.subscribe((data)=>{
@@ -27,8 +26,7 @@ export class FindjobComponent implements OnInit {
   }
 
   onSubmit(){
-    this.findJob = this.jobs.filter(job=> job.name.indexOf(this.name.value) && String(job.summary['address']).indexOf(this.location.value));
-    this.loadComponent = true;
+    this.findJob = this.jobs.filter(job => job.name.includes(this.name.value) && String(job.summary['address']).includes(this.location.value));
   }
 
   ngOnInit() {
