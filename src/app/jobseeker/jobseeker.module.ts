@@ -16,14 +16,17 @@ import { CategoryResolveService } from './resolve/category-resolve.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './findjob/search/search.component';
 import { SampleInterviewComponent } from './sample-interview/sample-interview.component';
+import { InterviewEtiquetteComponent } from './interview-etiquette/interview-etiquette.component';
+import { InterviewEtiquetteService } from './resolve/interview-etiquette.service';
 //Định nghĩa router riêng cho module này
 const routing: Routes = [
   { path: '', component: JobseekerComponent, children: [{
     path: '', pathMatch: 'full', redirectTo: 'home'},
     {path: 'home', component: HomeComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService }},
     {path: 'find', component: FindjobComponent, resolve: { 'jobs': HomeResolveService, 'cate': CategoryResolveService }},
-    {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService}},
-    {path: 'sample-interview', component: SampleInterviewComponent}
+    {path: 'job/:id', component: JobComponent, resolve: {'job': JobResolveService, 'other': HomeResolveService}},
+    {path: 'sample-interview', component: SampleInterviewComponent},
+    {path: 'interview-etiquette', component: InterviewEtiquetteComponent, resolve: {'video': InterviewEtiquetteService}}
 ], }
 ];
 
@@ -32,12 +35,11 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, FilterUnique, SearchComponent, SampleInterviewComponent ],
+  declarations: [JobseekerComponent, NavbarComponent ,HomeComponent, FooterComponent, FindjobComponent, JobComponent, FilterUnique, SearchComponent, SampleInterviewComponent, InterviewEtiquetteComponent ],
   imports: [
     CommonModule,
     Routing,
     NgxPaginationModule,
-    Ng2SearchPipeModule,
     FormsModule,
     ReactiveFormsModule
   ]
