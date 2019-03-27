@@ -11,12 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class JobComponent implements OnInit {
   job: Job;
-  other: Job[];
 
   constructor(private jobService: JobService, route: ActivatedRoute) {
     route.data.subscribe((data)=>{
       this.job = data.job[0];
-      this.other = data.other;
     })
   }
 
