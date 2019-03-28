@@ -17,6 +17,6 @@ export class NavbarComponent implements OnInit {
   }
   exit(){
     localStorage.removeItem('usr');
-    this.route.navigate(['/']);
+    window.location.href = '/';
   }
 }
