@@ -44,7 +44,7 @@ const routing: Routes = [
 const Routing: ModuleWithProviders = RouterModule.forChild(routing);
 
 @NgModule({
-  declarations: [JobseekerComponent, AboutComponent, NavbarComponent ,FooterComponent, HomeComponent, FindjobComponent, JobComponent, SampleInterviewComponent, InterviewEtiquetteComponent, ContactComponent, VoidInterviewComponent, DetailsComponent ],
+  declarations: [JobseekerComponent, AboutComponent, NavbarComponent ,FooterComponent, HomeComponent, FindjobComponent, JobComponent, SearchComponent, SampleInterviewComponent, InterviewEtiquetteComponent, ContactComponent, VoidInterviewComponent, DetailsComponent ],
   imports: [
     CommonModule,
     Routing,

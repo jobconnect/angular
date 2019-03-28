@@ -18,15 +18,15 @@ export class HellopageComponent implements OnInit {
       localStorage.setItem('usr', JSON.stringify({name: this.name.value, 
       jobRadio: Number(this.jobRadio.value)}));
       if(this.jobRadio.value == 0){
-        window.location.href= "/jobseeker";
+        this.route.navigate(['/jobseeker']);
       }
 
       if(this.jobRadio.value == 1){
-        window.location.href= "/employer";
+        this.route.navigate(['/employer']);
       }
-      
+
     } else {
-      this.route.navigate(['/']);
+      
     }
   }
 
