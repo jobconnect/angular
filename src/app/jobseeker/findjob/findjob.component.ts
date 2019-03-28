@@ -20,6 +20,7 @@ export class FindjobComponent implements OnInit {
     route.data.subscribe((data)=>{
       this.jobs = data.jobs;
       this.category = data.cate;
+      this.findJob = data.jobs;
     })
   }
 
